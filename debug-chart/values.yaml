@@ -61,7 +61,7 @@ service:
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
   enabled: true
-  className: "nginx"
+  className: "traefik"
   annotations:
     # Use this annotation if you want to force a specific ingress class
     # kubernetes.io/ingress.class: nginx
