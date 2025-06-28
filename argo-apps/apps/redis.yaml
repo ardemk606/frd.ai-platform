@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: minio
+  name: redis
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -9,14 +9,14 @@ spec:
   project: default
   source:
     repoURL: "https://github.com/ardemk606/frd.ai-platform.git"
-    path: infra-charts/minio
+    path: infra-charts/redis
     targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: frd 
+    namespace: frd
   syncPolicy:
     automated:
       prune: true
