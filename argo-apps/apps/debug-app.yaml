@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: "https://github.com/ardemk606/frd.ai-platform.git"
-    path: debug-chart
+    path: app-charts/debug-chart
     targetRevision: HEAD
     helm:
       valueFiles:
