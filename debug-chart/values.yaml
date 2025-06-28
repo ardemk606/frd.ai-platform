@@ -54,7 +54,7 @@ securityContext:
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
-  type: NodePort
+  type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
   port: 80
 
@@ -62,13 +62,7 @@ service:
 ingress:
   enabled: true
   className: "traefik"
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
-    traefik.ingress.kubernetes.io/service: debug-app-debug-chart@kubernetescrd
-    # Use this annotation if you want to force a specific ingress class
-    # kubernetes.io/ingress.class: nginx
-    # Add any other annotations required by your ingress controller
-    # kubernetes.io/tls-acme: "true"
+  annotations: {}
   hosts:
     - host: debug.frd.local
       paths:
